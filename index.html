@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hare Krishna</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Swipe Prompt */
+    #swipePrompt {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      animation: fadeOut 5s forwards;
+      z-index: 999;
+    }
+
+    @keyframes fadeOut {
+      0% { opacity: 1; }
+      80% { opacity: 1; }
+      100% { opacity: 0; display: none; }
+    }
+
+    .story {
+      padding: 40px 30px;
+      margin-top: 60px;
+      font-size: 16px;
+      line-height: 1.8;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @media (max-width: 600px) {
+      .story {
+        padding: 20px 15px;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <h3>Loading story...</h3>
+  </div>
+
+  <!-- Swipe Prompt -->
+  <div id="swipePrompt">Swipe right to continue →</div>
+  <div id="playMusicButton" style="position:fixed;top:20%;left:50%;transform:translate(-50%, -50%);background:#000;color:#fff;padding:15px 30px;border-radius:10px;z-index:1001;cursor:pointer;">
+    Tap to Start Story with Sound
+  </div>
+  <!-- Background music -->
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Swiper content -->
+  <div class="swiper" style="display: none;">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="story">
+              കഥയുടെ ആദ്യ ഭാഗം ഇവിടെ തുടങ്ങുന്നു. ഇതൊരു ഉദാഹരണ കഥയാണ്.
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story">
+              രണ്ടാം പേജ് ഉള്ളടക്കം ഇവിടെ. നിങ്ങള്‍ക്ക് സ്ലൈഡുചെയ്യാന്‍ കഴിയും.
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="story">
+              കഥയുടെ അവസാന ഭാഗം. നന്ദി വായിച്ചതിന്!
+            </div>
+          </div>
+          
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    // Wait for everything to load
+    window.addEventListener('load', () => {
+        
+      document.getElementById('loader').style.display = 'none';
+      document.querySelector('.swiper').style.display = 'block';
+
+      const playBtn = document.getElementById('playMusicButton');
+const music = document.getElementById('bgMusic');
+
+playBtn.addEventListener('click', () => {
+  music.play().catch(err => console.log(err));
+  playBtn.style.display = 'none';
+});
+    });
+
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: false,
+      effect: 'slide',
+      grabCursor: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+</html>
