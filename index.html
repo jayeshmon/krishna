@@ -5,8 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hare Krishna</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="style.css"/>
   <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+    background-image: url('img/2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
     /* Loader */
     #loader {
       position: fixed;
@@ -41,19 +50,39 @@
     }
 
     .story {
-      padding: 40px 30px;
-      margin-top: 60px;
-      font-size: 16px;
-      line-height: 1.8;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 200px 200px;
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #fff;
     }
 
     @media (max-width: 600px) {
       .story {
-        padding: 20px 15px;
-        font-size: 14px;
-        line-height: 1.6;
+        padding: 200px 200px;
+    margin-top: 60px;
+    font-size: 16px;
+    line-height: 1.8;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    color: #fff;
       }
+    }
+
+    /* Start button */
+    #playMusicButton {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 10px;
+      z-index: 1001;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -66,9 +95,10 @@
 
   <!-- Swipe Prompt -->
   <div id="swipePrompt">Swipe right to continue →</div>
-  <div id="playMusicButton" style="position:fixed;top:20%;left:50%;transform:translate(-50%, -50%);background:#000;color:#fff;padding:15px 30px;border-radius:10px;z-index:1001;cursor:pointer;">
-    Tap to Start Story with Sound
-  </div>
+
+  <!-- Start Button -->
+  <div id="playMusicButton">Tap to Start Story with Sound</div>
+
   <!-- Background music -->
   <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg" />
@@ -78,51 +108,221 @@
   <!-- Swiper content -->
   <div class="swiper" style="display: none;">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="story">
-              കഥയുടെ ആദ്യ ഭാഗം ഇവിടെ തുടങ്ങുന്നു. ഇതൊരു ഉദാഹരണ കഥയാണ്.
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="story">
-              രണ്ടാം പേജ് ഉള്ളടക്കം ഇവിടെ. നിങ്ങള്‍ക്ക് സ്ലൈഡുചെയ്യാന്‍ കഴിയും.
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="story">
-              കഥയുടെ അവസാന ഭാഗം. നന്ദി വായിച്ചതിന്!
-            </div>
-          </div>
-          
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ശ്രീകൃഷ്ണ ഭക്തയായ പാർവ്വതി അയ്യരുടെ ഓട കുഴൽ നാദം</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ഒരു ശ്രീകൃഷ്ണ ഭക്തയായപാർവ്വതി അയ്യരുടെ ജീവിതകഥയാണ് ഇവിടെ പറയുന്നത്.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പാലക്കാട് ദേശത്ത് അഷ്ടമി രോഹിണി നാളിൽ ജനനം. ബാല്യകാലം മുതലേ പ്രായത്തിനപ്പുറം പക്വതയും ജ്ഞാനമുള്ള കുട്ടിയായിരുന്നു പാർവ്വതി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ബാല്യകാലത്ത് തന്നെ അച്ഛന്റെ മരണം മൂലം പാർവതി യുടെ അമ്മ അടുത്തുള്ള ശ്രീകൃഷ്ണക്ഷേത്രത്തിൽ മാല കെട്ടിയാണ് പാർവ്വതി യെ നോക്കിയത്. ശ്രീകൃഷ്ണ കഥകൾ പറഞ്ഞാണ് അമ്മ പാർവ്വതിവളർത്തിയത്.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പതിവുപോലെ എല്ലാ ദിവസവും അമ്മയോടൊപ്പം ക്ഷേത്രത്തിൽ പോകുകയും. മാല കെട്ടുന്ന അമ്മയെ സഹായിക്കുകയും ചെയ്യുമായിരുന്നു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അമ്പലത്തിൽ വരുന്ന തന്റെ സമപ്രായക്കാരായ കുട്ടികൾക്ക് അമ്മ പറഞ്ഞു കൊണ്ട ശ്രീകൃഷ്ണ കഥകൾ പഠിപ്പിക്കുന്നത് ആയിരുന്നു പാർവ്വതിയുടെ ഏറ്റവും ഇഷ്ടം.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>തന്റെ മോളുടെ ജന്മദിനമായ അഷ്ടമി രോഹിണി നാളിൽ അമ്മ പാർവ്വതിയോട് ചോദിച്ചു. നിനക്ക് എന്താണ് അമ്മ സമ്മാനമായി നൽകേണ്ടത്.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അമ്മ എനിക്ക് ഒരു ഓടക്കുഴൽ സമ്മാനമായി നൽകിയാൽ മതി എന്ന് പാർവ്വതിയമ്മയോട് പറഞ്ഞു. അത്ഭുതത്തോടെ അമ്മ ചോദിച്ചു. എന്തിനാ മോളെ നിനക്ക് ഓടക്കുഴൽ സമ്മാനമായി നൽകേണ്ടത്.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അമ്മ എനിക്ക് എല്ലാ ദിവസവും ശ്രീകൃഷ്ണ സന്നിധിയിൽ ഓടക്കുഴൽ വായിക്കണം ആ മുരളി നാദം ആണ് ഭഗവാന് ഏറ്റവും ഇഷ്ടമെന്നും എനിക്കറിയാം.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അത് കേട്ട അമ്മ ഉടനെ തന്നെ അവൾക്കൊരു ഓടക്കുഴൽ സമ്മാനമായി നൽകുകയും ചെയ്തു. അന്നുമുതൽ അവൾ എല്ലാ ദിവസവും വിട്ടിരിക്കുന്ന ശ്രീകൃഷ്ണ വിഗ്രഹത്തിന് മുന്നിൽ ഓടക്കുഴൽ വായിക്കുമായിരുന്നു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ഒരു ദിവസം ക്ഷേത്രത്തിൽ അമ്മയോടൊപ്പം മാല കെട്ടുന്ന വേളയിൽ. അവൾ അമ്മയോട് പറഞ്ഞു. അമ്മ എനിക്ക് അമ്പലത്തിൽ ശ്രീകൃഷ്ണ സന്നിധിയിൽ ഓടക്കുഴൽ വായിക്കാനുള്ള അതിയായ ആഗ്രഹമുണ്ടെന്ന്.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അമ്മ തന്റെ ആഗ്രഹത്തെ തിരുമേനിയുമായി സംസാരിക്കുകയും. തിരുമേനിയുടെ അനുഭവം വാങ്ങുകയും ചെയ്തു. സ്വന്തം ആഗ്രഹം സാധിച്ചാൽ, തിരുമേനിയുടെയും അമ്മയുടെ കാൽതൊട്ട് വന്ദിച്ച് ശ്രീകൃഷ്ണ സന്നിധിയിൽ ഓടക്കുഴൽ വായിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ആ മധുരമായ മുരളി നാദം കേട്ട്. ഒരു കൂട്ടം ഭക്തജനങ്ങൾ അവിടെ ഒത്തുചേർന്നു. പാർവ്വതി ക്ഷേത്ര സന്നിധിയിൽ ഒത്തുചേർന്ന ഭക്തരോട് ഉച്ചത്തിൽ പറഞ്ഞു. ശ്രീകൃഷ്ണൻ ഏറ്റവും ഇഷ്ടം. ഓടക്കുഴൽ നാദം ആണെന്നും.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ശ്രീകൃഷ്ണസന്നിധിയിൽ കുട്ടികൾ ഓടക്കുഴൽ വായിക്കുന്നതാണ് ഭഗവാൻ ഏറ്റവും ഇഷ്ടമെന്നും പാർവ്വതി പറഞ്ഞു. കുട്ടികൾ ഓടക്കുഴൽ പഠിക്കണമെന്നും ശ്രീകൃഷ്ണ സന്നിധിയിൽ ഓടക്കുഴൽ കുട്ടികൾ വായിക്കണമെന്നും പാർവ്വതി പറഞ്ഞു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അന്നുമുതൽ പാർവ്വതി എല്ലാ കുട്ടികളെയും ഓടക്കുഴൽ  പഠിപ്പിക്കാൻ തുടങ്ങി. ശ്രീകൃഷ്ണ സന്നിധിയിൽ അവരെക്കൊണ്ട് ഓടക്കുഴൽ  വായിപ്പിക്കാനും ആരംഭിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പെട്ടെന്ന് അമ്മയുടെ  അസുഖബാധിതയായി കിടപ്പിലായത്. അമ്മയുടെ അസുഖം പാർവ്വതി ഒത്തിരി ദുഃഖത്തിലാഴ്ത്തി. പിന്നീട് ശ്രീകൃഷ്ണ ക്ഷേത്ര സന്നിധിയിൽ  മാലകെട്ടാൻ തുടങ്ങി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>വൈകുന്നേരം സമയങ്ങളിൽ കുട്ടികൾക്ക് ഓടക്കുഴൽ പഠിപ്പിക്കുകയും ചെയ്തു. ഇതിൽ നിന്നും  കിട്ടുന്ന വരുമാനത്തിൽ വീടും അമ്മയെയും അവൾ നോക്കി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ഒരു ദിവസം പാർവ്വതിയുടെ അമ്മ പറഞ്ഞു എന്റെ ഒരു ആഗ്രഹമാണ് മോൾ വിവാഹിതയായി കാണണമെന്ന്. വിവാഹ ജീവിതത്തെ പറ്റി അത്ര താല്പര്യം ഇല്ലാത്ത പാർവ്വതി സ്വന്തം അമ്മയുടെ താൽപര്യപ്രകാരം വിവാഹത്തിന് സമ്മതിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പാർവ്വതി വിവാഹിതയായി. പാർവ്വതിയുടെ നിഷ്ഠകളും ശ്രീകൃഷ്ണ ഭക്തിയും  ഭർത്താവിന് ഒരിക്കലും ഇഷ്ടപെട്ടില്ല. അതുകൊണ്ട് അവൻ പാർവ്വതിയെ ഉപേക്ഷിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പെട്ടെന്ന് അമ്മയുടെ മരണം സംഭവിച്ചു. തന്റെ ഏറ്റവും കൂടുതൽ സ്നേഹിച്ച അമ്മയുടെ വേർപാട് പാർവ്വതി വീട്ടിൽ നിന്നും അമ്മ സമ്മാനമായി നൽകിയ ഓടക്കുഴൽ എടുത്ത് ഇറങ്ങി. വീട് ഉപേക്ഷിച്ച് ഇറങ്ങിയ പാർവതി ക്ഷേത്രസന്നിധിയിൽ ചെന്ന് വളരെ സങ്കടത്തിലൂടെ ശ്രീകൃഷ്ണന്റെ സന്നിധിയിൽ ഓടക്കുഴൽ വായിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അന്ന് അവൾ  തീരുമാനമെടുത്തു.ശ്രീകൃഷ്ണ ഏറ്റവും ഇഷ്ടപ്പെട്ട മുരളി നാദം കുട്ടികളെ പഠിപ്പിക്കാൻ വേണ്ടി. അമ്മ തനിക്ക് ജന്മ ദിനത്തിൽ നൽകിയ ഓടക്കുഴലും എടുത്ത് യാത്രതിരിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>യാത്രയിൽ അവർക്ക് പല പ്രതിസന്ധികളും നേരിടേണ്ടി വന്നു. പാർവ്വതി അചഞ്ചലമായ ശ്രീകൃഷ്ണ ഭക്തിയിൽ അവൾ അതെല്ലാം നേരിട്ടു മുന്നോട്ടു പോയി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>ആ കാലഘട്ടത്തിൽ COVID മഹാമാരി ലോകം നിശ്ചലമായി. പാർവ്വതിയുടെ യാത്രയും നിശ്ചലമായി മാറി. തന്റെ ആശയത്തെ ലോകത്തെ കൃഷ്ണഭക്തരോട് പറയണമെന്നുള്ള ആഗ്രഹം ബാക്കിയായി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അപ്പോഴാണ് പാർവതി സോഷ്യൽ മീഡിയ ഒരു അക്കൗണ്ട് ഉണ്ടാക്കുകയും. അതിലൂടെ എന്റെ ആശയം ശ്രീകൃഷ്ണ ഭക്തി ലേക്ക് എത്തിക്കുക എന്നതായി.  സോഷ്യൽ മിഡിയിലൂടെ പാർവ്വതി ഒത്തിരി സൗഹൃദങ്ങൾ സ്ഥാപിക്കുകയുണ്ടായി.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>അപ്പോഴാണ് ഒരു ദിവസം വ്യത്യസ്തമായ ഒരു പ്രോഗ്രാം സോഷ്യൽ മീഡിയയിലൂടെ കാണാനിടയായി. നിർജ്വല എന്ന കൂട്ടായ്മയിലൂടെ  രണ്ട് ചെറുപ്പക്കാർ ചേർന്ന് . ക്ഷേത്രങ്ങളിൽ മാല കെട്ടുന്ന അമ്മമാരെ ആദരിക്കുന്ന ഒരു പരിപാടി നടത്തുന്നത് ആ നിമിഷം എന്റെ അമ്മയെ ജീവിതം മൊത്തം ഭഗവാന്റെ സന്നിധിയിൽ ഭഗവാൻ വേണ്ടി മാലകെട്ടി അർപ്പിച്ചു ജീവിച്ച എന്റെ അമ്മയ്ക്ക് ജീവിച്ചിരുന്നപ്പോൾ ഇതുപോലെ അംഗീകാരം കിട്ടിയില്ലല്ലോ എന്നോർത്ത് പാർവ്വതികരഞ്ഞു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>നിർജ്വലഎന്ന കൂട്ടായ്മയിലൂടെ മാല കെട്ടുന്നഅമ്മമാരുടെ ആദരിക്കുന്ന ഈ പ്രോഗ്രാം ഓർഗനൈസ് ചെയ്യുന്ന . രണ്ടു വ്യക്തികളെ സോഷ്യൽ മീഡിയയിലൂടെ പരിചയപ്പെടുവാൻ ആഗ്രഹിച്ചു. അങ്ങനെ വൈക്കം കൂട്ടായ്മയിലൂടെ  പ്രോഗ്രാം ഓർഗനൈസ് ചെയ്യുന്ന മിഥുനെയും ശങ്കര നമ്പൂതിരിപ്പാടിനെയും പരിചയപ്പെടുകയും.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പാർവ്വതി പറഞ്ഞു അവരോട് എന്റെ അമ്മ ക്ഷേത്രത്തിൽ മാല കെട്ടി ആണ് എന്നെ അമ്മ നോക്കിയത് . ഭഗവത് സന്നിധിയിൽ മാല കെട്ടി അർപ്പിച്ചു ജീവിച്ചിരുന്ന അമ്മയെ ആരും  ആദരിച്ചു കണ്ടില്ല. ഇന്നെന്റെ  അമ്മ ജീവിച്ചിരുന്നുവെങ്കിൽ നിങ്ങളുടെ കൂട്ടായ്മ ആദരിക്കും എന്നോർത്ത് ഞാൻ ഒത്തിരി സന്തോഷിച്ചു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>നിങ്ങളുടെ പ്രോഗ്രാം കണ്ടപ്പോൾ എന്റെ അമ്മയുടെ മുഖമാണ് എനിക്ക് ഓർമ്മ വന്നത്  അതുകൊണ്ടുതന്നെയാണ് ഞാൻ സോഷ്യൽ മീഡിയയിലൂടെ നിങ്ങളുടെ പരിചയപ്പെട്ടത്. അമ്മമാരെ ആദരിക്കുന്ന ഈ പരിപാടിയുമായി നിങ്ങൾ മുന്നോട്ട് പോണം.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>മാല കെട്ടുന്ന അമ്മമാർക്ക് കൊടുക്കുന്ന ഓരോ ആദരവും എന്റെ അമ്മക്ക് കിട്ടുന്ന പോലെ ഞാൻ എന്നും ഓർത്തിരിക്കും. ഈ പ്രോഗ്രാം ഓർഗനൈസ് ചെയ്യുന്ന ശങ്കരൻ നമ്പൂതിരിപ്പാടിനും മിഥുൻ സുകു  എല്ലാവിധ ആശംസകളും നേർന്നു.</p>
+        </div>
+      </div>
+      
+      <div class="swiper-slide">
+        <div class="story">
+          <p>പാർവ്വതിയുടെ ജീവിത കഥയും ഈ പ്രോഗ്രാമുകളും ഒരു ഭാഗം കൂടി അവസാനിച്ചു.</p>
+        </div>
+      </div>
+      
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    // Wait for everything to load
+    let swiper; // Declare it globally to use later
+
     window.addEventListener('load', () => {
-        
       document.getElementById('loader').style.display = 'none';
-      document.querySelector('.swiper').style.display = 'block';
 
       const playBtn = document.getElementById('playMusicButton');
-const music = document.getElementById('bgMusic');
+      const music = document.getElementById('bgMusic');
+      const swiperContainer = document.querySelector('.swiper');
 
-playBtn.addEventListener('click', () => {
-  music.play().catch(err => console.log(err));
-  playBtn.style.display = 'none';
-});
-    });
+      playBtn.addEventListener('click', () => {
+        music.play().catch(err => console.log('Music play failed:', err));
+        swiperContainer.style.display = 'block';
+        playBtn.style.display = 'none';
 
-    const swiper = new Swiper('.swiper', {
-      direction: 'horizontal',
-      loop: false,
-      effect: 'slide',
-      grabCursor: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+        // Initialize swiper with autoplay
+        swiper = new Swiper('.swiper', {
+          direction: 'horizontal',
+          loop: false,
+          effect: 'slide',
+          grabCursor: true,
+          autoplay: {
+            delay: 5000, // 5 seconds per slide
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+        });
+      });
     });
   </script>
 </body>
